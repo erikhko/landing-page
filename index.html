@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InfoTech — Hardware & Periféricos de Outro Nível</title>
+<meta name="description" content="Placas de vídeo, processadores, periféricos e muito mais. Monte seu setup, compare e economize.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="aurora"><i></i><i></i><i></i></div>
+<div class="grain"></div>
+<div class="progress"><b id="progress"></b></div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="logo"><span class="logo-mark">i</span>InfoTech<em>//store</em></a>
+  <nav>
+    <a href="#produtos">Produtos</a>
+    <a href="#builder">Monte seu PC</a>
+    <a href="#ofertas">Ofertas</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="icon-btn" id="openCompare" title="Comparar">⇄ <span class="badge" id="cmpCount">0</span></button>
+    <button class="icon-btn cart-btn" id="openCart">CARRINHO <span class="badge" id="cartCount">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="tag mono"><span class="dot"></span> SISTEMA ONLINE · FRETE GRÁTIS ACIMA DE R$ 499</div>
+    <h1 class="glitch">O PODER<br><span class="grad">NA PONTA</span><br>DOS&nbsp;DEDOS.</h1>
+    <p>Hardware de elite, periféricos precisos e setups que parecem saídos do futuro. Tudo com garantia, entrega expressa e até <b>12x sem juros</b>.</p>
+    <div class="cta-row">
+      <a href="#produtos" class="btn primary magnetic">Explorar produtos <i>→</i></a>
+      <a href="#builder" class="btn ghost magnetic">Montar meu PC</a>
+    </div>
+    <div class="stats">
+      <div><b data-count="48000" data-suffix="+">0</b><span>clientes ativos</span></div>
+      <div><b data-count="1200" data-suffix="+">0</b><span>produtos</span></div>
+      <div><b data-count="4.9" data-dec="1">0</b><span>nota média</span></div>
+    </div>
+  </div>
+
+  <div class="hero-visual" id="heroVisual">
+    <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div>
+    <div class="chip" id="chip">
+      <div class="chip-layer l1"></div>
+      <div class="chip-layer l2"></div>
+      <div class="chip-core"><span class="mono">IT-9</span><small class="mono">QUANTUM CORE</small></div>
+      <div class="pins p-t"></div><div class="pins p-b"></div><div class="pins p-l"></div><div class="pins p-r"></div>
+    </div>
+    <div class="float-card fc1 mono"><i></i> TEMP <b id="temp">38°C</b></div>
+    <div class="float-card fc2 mono"><i></i> CLOCK <b id="clock">5.8 GHz</b></div>
+    <div class="float-card fc3 mono"><i></i> FPS <b id="fps">240</b></div>
+  </div>
+  <div class="scroll-hint mono">SCROLL ↓</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee"><div class="track mono">
+  <span>RTX SERIES</span><span>✦</span><span>RYZEN 9</span><span>✦</span><span>NVMe GEN5</span><span>✦</span><span>DDR5 7200</span><span>✦</span><span>OLED 240Hz</span><span>✦</span><span>SWITCH ÓPTICO</span><span>✦</span><span>WI-FI 7</span><span>✦</span>
+  <span>RTX SERIES</span><span>✦</span><span>RYZEN 9</span><span>✦</span><span>NVMe GEN5</span><span>✦</span><span>DDR5 7200</span><span>✦</span><span>OLED 240Hz</span><span>✦</span><span>SWITCH ÓPTICO</span><span>✦</span><span>WI-FI 7</span><span>✦</span>
+</div></div>
+
+<!-- BENTO CATEGORIAS -->
+<section class="section" id="categorias">
+  <div class="sec-head reveal"><span class="mono eyebrow">// 01 — CATEGORIAS</span><h2>Escolha seu <span class="grad">arsenal</span></h2></div>
+  <div class="bento">
+    <button class="bento-item b-big tilt reveal" data-cat="gpu"><div class="art" data-art="gpu"></div><h3>Placas de Vídeo</h3><p>Ray tracing e DLSS para 4K sem concessões.</p><span class="mono go">VER →</span></button>
+    <button class="bento-item b-wide tilt reveal" data-cat="ram"><div class="art" data-art="ram"></div><h3>Memória RAM</h3><span class="mono go">VER →</span></button>
+    <button class="bento-item tilt reveal" data-cat="cpu"><div class="art" data-art="cpu"></div><h3>Processadores</h3><span class="mono go">VER →</span></button>
+    <button class="bento-item tilt reveal" data-cat="periferico"><div class="art" data-art="keyboard"></div><h3>Periféricos</h3><span class="mono go">VER →</span></button>
+    <button class="bento-item b-wide tilt reveal" data-cat="armazenamento"><div class="art" data-art="ssd"></div><h3>Armazenamento</h3><span class="mono go">VER →</span></button>
+    <button class="bento-item tilt reveal" data-cat="monitor"><div class="art" data-art="monitor"></div><h3>Monitores</h3><span class="mono go">VER →</span></button>
+    <button class="bento-item tilt reveal" data-cat="audio"><div class="art" data-art="headset"></div><h3>Áudio</h3><span class="mono go">VER →</span></button>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="section" id="produtos">
+  <div class="sec-head reveal"><span class="mono eyebrow">// 02 — CATÁLOGO</span><h2>Produtos em <span class="grad">destaque</span></h2></div>
+  <div class="toolbar reveal">
+    <div class="search"><span class="mono">⌕</span><input id="search" type="search" placeholder="Buscar produto, marca, spec…  ( / )" autocomplete="off"></div>
+    <select id="sort" aria-label="Ordenar">
+      <option value="rel">Relevância</option>
+      <option value="asc">Menor preço</option>
+      <option value="desc">Maior preço</option>
+      <option value="rating">Melhor avaliados</option>
+    </select>
+  </div>
+  <div class="chips reveal" id="chips"></div>
+  <div class="grid" id="grid"></div>
+  <p class="empty mono" id="empty" hidden>// NENHUM RESULTADO ENCONTRADO</p>
+</section>
+
+<!-- BUILDER -->
+<section class="section" id="builder">
+  <div class="sec-head reveal"><span class="mono eyebrow">// 03 — CONFIGURADOR</span><h2>Monte seu <span class="grad">PC dos sonhos</span></h2><p>Escolha cada peça e veja desempenho, consumo e preço em tempo real.</p></div>
+  <div class="builder reveal">
+    <div class="b-steps" id="bSteps"></div>
+    <div class="b-panel">
+      <div class="b-rig" id="rig"></div>
+      <div class="meters">
+        <div class="meter"><label class="mono"><span>PERFORMANCE</span><span><b id="mPerf">0</b>/100</span></label><div class="bar"><i id="barPerf"></i></div></div>
+        <div class="meter"><label class="mono"><span>CONSUMO</span><b id="mWatt">0W</b></label><div class="bar warn"><i id="barWatt"></i></div></div>
+        <div class="meter"><label class="mono" style="margin:0"><span>FONTE SUGERIDA</span><b id="mPsu">—</b></label></div>
+      </div>
+      <div class="b-total"><div><span class="mono">TOTAL DO SETUP</span><strong id="bTotal">R$ 0</strong><small id="bInst"></small></div><button class="btn primary" id="bAdd">Adicionar setup ao carrinho</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTAS -->
+<section class="section" id="ofertas">
+  <div class="deal reveal">
+    <div class="deal-info">
+      <span class="mono eyebrow">// OFERTA RELÂMPAGO</span>
+      <h2>RTX 5080 <span class="grad">Phantom</span></h2>
+      <p>Quantidade limitada. Preço válido até o cronômetro zerar.</p>
+      <div class="countdown mono" id="countdown"><div><b>00</b><span>HRS</span></div><div><b>00</b><span>MIN</span></div><div><b>00</b><span>SEG</span></div></div>
+      <div class="price-row"><s>R$ 8.999</s><strong>R$ 7.299</strong><em class="mono">-19%</em></div>
+      <div class="stock"><div class="bar"><i id="stockBar"></i></div><span class="mono" id="stockTxt"></span></div>
+      <button class="btn primary magnetic" id="dealBuy">Garantir a minha →</button>
+    </div>
+    <div class="deal-art tilt" data-art="gpu" id="dealArt"></div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="section perks">
+  <div class="perk reveal"><i>⚡</i><h4>Entrega expressa</h4><p>Receba em até 24h nas capitais.</p></div>
+  <div class="perk reveal"><i>🛡</i><h4>Garantia estendida</h4><p>Até 3 anos em hardware selecionado.</p></div>
+  <div class="perk reveal"><i>↺</i><h4>30 dias para trocar</h4><p>Não gostou? Devolvemos seu dinheiro.</p></div>
+  <div class="perk reveal"><i>◈</i><h4>12x sem juros</h4><p>No cartão ou 8% off no PIX.</p></div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="sec-head reveal"><span class="mono eyebrow">// 04 — DÚVIDAS</span><h2>Perguntas <span class="grad">frequentes</span></h2></div>
+  <div class="faq reveal">
+    <details><summary>Os produtos têm nota fiscal e garantia?</summary><p>Sim. Todos os produtos são novos, lacrados, com nota fiscal e garantia de fábrica mínima de 12 meses.</p></details>
+    <details><summary>Qual o prazo de entrega?</summary><p>Capitais: 1 a 2 dias úteis. Demais regiões: 3 a 7 dias úteis. Frete grátis acima de R$ 499.</p></details>
+    <details><summary>Posso parcelar sem juros?</summary><p>Em até 12x sem juros no cartão. No PIX você ganha 8% de desconto.</p></details>
+    <details><summary>O configurador verifica compatibilidade?</summary><p>Ele estima desempenho e consumo. Nossa equipe valida a compatibilidade final antes do envio.</p></details>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section news reveal">
+  <h2>Entre na <span class="grad">lista VIP</span></h2>
+  <p>Ofertas antes de todo mundo + cupom <b class="mono">INFO10</b> de 10% na primeira compra.</p>
+  <form id="newsForm"><input type="email" required placeholder="seu@email.com"><button class="btn primary">Quero receber</button></form>
+</section>
+</main>
+
+<details class="credits"><summary>// CRÉDITOS DAS IMAGENS</summary><p style="margin-top:8px">Fotos ilustrativas de produtos reais, via Wikimedia Commons, sob licenças Creative Commons. Os modelos e marcas da loja são fictícios.</p><ul>
+<li>RTX 5080 Phantom: <a href="https://commons.wikimedia.org/wiki/File:MSI_GeForce_RTX_3070_VENTUS_3X_OC.jpg" target="_blank" rel="noopener">MSI GeForce RTX 3070 VENTUS 3X OC.jpg</a> — TheStriker, CC BY 4.0</li>
+<li>RX 8700 XT Nitro: <a href="https://commons.wikimedia.org/wiki/File:Sapphire_Radeon_RX_560_4GB_GDDR5_20250830_HOF4258-HDR_RAW-Export.png" target="_blank" rel="noopener">Sapphire Radeon RX 560 4GB GDDR5 20250830 HOF425</a> — PantheraLeo1359531, CC BY 4.0</li>
+<li>GTX Volt 4060 Ti: <a href="https://commons.wikimedia.org/wiki/File:Nvidia_GeForce_RTX_5060_Ti_16GB,_PNY_Overclocked_Dual_Fan,_front.jpg" target="_blank" rel="noopener">Nvidia GeForce RTX 5060 Ti 16GB, PNY Overclocked</a> — FreeMediaKid!, CC BY-SA 4.0</li>
+<li>Ryzen 9 9950X: <a href="https://commons.wikimedia.org/wiki/File:AMD_Ryzen_9_9950X.jpg" target="_blank" rel="noopener">AMD Ryzen 9 9950X.jpg</a> — 4300streetcar, CC BY 4.0</li>
+<li>Core i7 15700K: <a href="https://commons.wikimedia.org/wiki/File:4th_Generation_Intel%C2%AE_Core%E2%84%A2_i7_Processor_Front_and_Back.jpg" target="_blank" rel="noopener">4th Generation Intel&#174; Core™ i7 Processor Front a</a> — Intel in Deutschland, CC BY-SA 2.0</li>
+<li>Ryzen 5 9600X: <a href="https://commons.wikimedia.org/wiki/File:AMD_Ryzen_9_3900X_-_ISO_Style.jpg" target="_blank" rel="noopener">AMD Ryzen 9 3900X - ISO Style.jpg</a> — --P399915243, CC BY-SA 4.0</li>
+<li>DDR5 32GB: <a href="https://commons.wikimedia.org/wiki/File:XPG_DDR4_and_MSI_logo_20180606.jpg" target="_blank" rel="noopener">XPG DDR4 and MSI logo 20180606.jpg</a> — Zicawei, CC BY-SA 4.0</li>
+<li>DDR5 16GB: <a href="https://commons.wikimedia.org/wiki/File:TWSC_8GB_DDR5-4800_SO-DIMM_memory_module_-_rear_view.jpg" target="_blank" rel="noopener">TWSC 8GB DDR5-4800 SO-DIMM memory module - rear </a> — ITEagle Europe - Sebastiaan Broekhoven, CC BY-SA 4.0</li>
+<li>SSD Gen5 2TB: <a href="https://commons.wikimedia.org/wiki/File:NVMe_SSd.jpg" target="_blank" rel="noopener">NVMe SSd.jpg</a> — User5515, CC0</li>
+<li>SSD Gen4 1TB: <a href="https://commons.wikimedia.org/wiki/File:A_2230_NVME_SSD.jpg" target="_blank" rel="noopener">A 2230 NVME SSD.jpg</a> — User5515, CC0</li>
+<li>Teclado Aero: <a href="https://commons.wikimedia.org/wiki/File:Lingbao_JIGUANSHI_Mechanical_Gaming_Keyboard.jpg" target="_blank" rel="noopener">Lingbao JIGUANSHI Mechanical Gaming Keyboard.jpg</a> — Morn, CC BY-SA 4.0</li>
+<li>Mouse Strike Pro: <a href="https://commons.wikimedia.org/wiki/File:2023_Mysz_komputerowa_Logitech_G903_Lightspeed.jpg" target="_blank" rel="noopener">2023 Mysz komputerowa Logitech G903 Lightspeed.j</a> — Jacek Halicki, CC BY-SA 4.0</li>
+<li>Monitor OLED 27&quot;: <a href="https://commons.wikimedia.org/wiki/File:ASUS_PB278Q_(PXL_20250914_223256075).jpg" target="_blank" rel="noopener">ASUS PB278Q (PXL 20250914 223256075).jpg</a> — Hayden Schiff, CC BY 4.0</li>
+<li>Monitor Ultrawide 34&quot;: <a href="https://commons.wikimedia.org/wiki/File:ILA_2010_Samstag_232.JPG" target="_blank" rel="noopener">ILA 2010 Samstag 232.JPG</a> — ILA-boy, CC BY-SA 3.0</li>
+<li>Headset Sonic: <a href="https://commons.wikimedia.org/wiki/File:Sony-WH-1000XM3-kabellose-Bluetooth-Noise-Cancelling-Kopfhoerer.3.jpg" target="_blank" rel="noopener">Sony-WH-1000XM3-kabellose-Bluetooth-Noise-Cancel</a> — www.digitalpush.net, CC BY 4.0</li>
+<li>Headset Pulse Lite: <a href="https://commons.wikimedia.org/wiki/File:Uproar_Wireless_by_Skull_Candy.jpg" target="_blank" rel="noopener">Uproar Wireless by Skull Candy.jpg</a> — Kskhh, CC BY-SA 4.0</li>
+</ul></details>
+
+<footer class="footer">
+  <div class="logo"><span class="logo-mark">i</span>InfoTech<em>//store</em></div>
+  <p class="mono">© 2026 InfoTech. Projeto de demonstração — marca e produtos fictícios.</p>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="cartDrawer" aria-label="Carrinho">
+  <div class="drawer-head"><h3>Seu carrinho</h3><button class="close" data-close>✕</button></div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="free mono" id="freeShip"></div>
+    <div class="coupon"><input id="coupon" placeholder="Cupom (ex: INFO10)"><button class="btn ghost" id="applyCoupon">Aplicar</button></div>
+    <div class="row"><span>Subtotal</span><b id="subtotal">R$ 0</b></div>
+    <div class="row" id="discRow" hidden><span>Desconto</span><b id="discount">-R$ 0</b></div>
+    <div class="row total"><span>Total</span><b id="total">R$ 0</b></div>
+    <button class="btn primary full" id="checkout">Finalizar compra</button>
+  </div>
+</aside>
+
+<!-- COMPARE MODAL -->
+<div class="modal" id="cmpModal">
+  <div class="modal-box">
+    <div class="drawer-head"><h3>Comparar produtos</h3><button class="close" data-close>✕</button></div>
+    <div class="cmp-body" id="cmpBody"></div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="doneModal">
+  <div class="modal-box small center">
+    <div class="check">✓</div>
+    <h3>Pedido confirmado!</h3>
+    <p id="doneTxt"></p>
+    <button class="btn primary" data-close>Continuar comprando</button>
+  </div>
+</div>
+
+<!-- COMPARE TRAY -->
+<div class="tray" id="tray"><span class="mono" id="trayTxt"></span><button class="btn primary" id="trayGo">Comparar</button><button class="btn ghost" id="trayClear">Limpar</button></div>
+
+<div class="toasts" id="toasts"></div>
+<script src="app.js"></script>
+</body>
+</html>
